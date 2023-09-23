@@ -1,0 +1,41 @@
+<index.html>
+
+ 
+         <img src="assets/images/logo.png" class="logo" alt="fisheye logo"/>
+
+         <script src="scripts/templates/photographer.js"></script>
+         <script src="scripts/pages/index.js"></script>
+
+</index.html>
+
+//------------------------------------------------------------------------------
+                              <script></script>
+--------------------------------------------------------------------------------
+      <index.js>
+            async function getPhotographers() {}
+
+            async function displayData(photographers){
+
+                  photographerTemplate(photographer);
+                  getUserCardDOM()
+            }
+            
+            async function init() {
+                  // Récupère les datas des photographes
+                  const { photographers } = await getPhotographers();
+                  displayData(photographers);
+             }
+              init();
+
+      </index.js>
+
+     
+     
+      <photographers.js>
+           function photographerTemplate(data) {
+                  function getUserCardDOM()
+           }
+      </photographers.j>
+
+
+
