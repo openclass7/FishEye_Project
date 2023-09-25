@@ -144,17 +144,25 @@
             img.setAttribute("src", picture)
             const h2 = document.createElement( 'h2' );
             h2.textContent = name ;
+            const link_a = document.createElement( 'a' );
+            link_a.setAttribute("href","photographer.html");
+            link_a.target="_blank";
+       
+
             const p_location = document.createElement( 'p' );
             p_location.classList.add("location");
-            p_location.textContent =`${city} , ${country}` ;
+            p_location.textContent =`${city}, ${country}` ;
             const p_tagline = document.createElement( 'p' );
             p_tagline.classList.add("tagline");
             p_tagline.textContent = tagline ;
             const p_price = document.createElement( 'p' );
             p_price.classList.add("price");
             p_price.textContent = `${price}€/jour` ;
-            article.appendChild(img);
-            article.appendChild(h2);
+            article.appendChild(link_a);
+            link_a.appendChild(img);
+            link_a.appendChild(h2);
+            // article.appendChild(img);
+            // article.appendChild(h2);
             article.appendChild(p_location);
             article.appendChild(p_tagline);
             article.appendChild(p_price);
