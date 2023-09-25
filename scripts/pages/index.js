@@ -91,24 +91,29 @@
         const response = await fetch(url);
         const data = await response.json();
 
-        let photographers=data.photographers
-        let media=data.media
+        let photographers 
+        // let media 
+        // let photographers=data.photographers
+        // let media=data.media
         
-        console.log(photographers)
-        console.log(media)
-       return photographers 
+        
+        // console.log(media)
+       return photographers=data.photographers
+        // media=data.media;
      
     }
 
-
-
+    getPhotographers()
+//  console.log(photographers)
 
     async function displayData(photographers) {
         const photographersSection = document.querySelector(".photographer_section");
 
         photographers.forEach((photographer) => {
-            const photographerModel = photographerTemplate(photographer);
-            const userCardDOM = photographerModel.getUserCardDOM();
+         
+            const userCardDOM = photographerTemplate(photographer).getUserCardDOM();
+            // const photographerModel = photographerTemplate(photographer);
+            // const userCardDOM = photographerModel.getUserCardDOM();
             photographersSection.appendChild(userCardDOM);
         });
     }
@@ -117,10 +122,47 @@
         // Récupère les datas des photographes
         // const { photographers } = await getPhotographers();
         const  photographers  = await getPhotographers();
+     
+        console.log(photographers)
+        console.log(photographers[1].name)
+        console.log(photographers[0].portrait)
+       
         displayData(photographers);
     }
     
     init();
+    //----------------
+    function photographerTemplate(data) {
+        const { name, portrait,city,country,tagline,price } = data;
+        console.log(name,portrait,tagline)
+    
+        const picture = `assets/photographers/${portrait}`;
+    
+        function getUserCardDOM() {
+            const article = document.createElement( 'article' );
+            const img = document.createElement( 'img' );
+            img.setAttribute("src", picture)
+            const h2 = document.createElement( 'h2' );
+            h2.textContent = name ;
+            const p_location = document.createElement( 'p' );
+            p_location.classList.add("location");
+            p_location.textContent =`${city} , ${country}` ;
+            const p_tagline = document.createElement( 'p' );
+            p_tagline.classList.add("tagline");
+            p_tagline.textContent = tagline ;
+            const p_price = document.createElement( 'p' );
+            p_price.classList.add("price");
+            p_price.textContent = `${price}€/jour` ;
+            article.appendChild(img);
+            article.appendChild(h2);
+            article.appendChild(p_location);
+            article.appendChild(p_tagline);
+            article.appendChild(p_price);
+            return (article);
+        }
+        return { name, picture, getUserCardDOM }
+        // return { name, picture, getUserCardDOM }
+    }
     
 
    
