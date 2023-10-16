@@ -6,16 +6,15 @@
         return data
     }
     getPhotographers()
-//  console.log(photographers)
+
 
     async function displayData(photographers) {
         const photographersSection = document.querySelector(".photographer_section");
 
         photographers.forEach((photographer) => {
             const userCardDOM = photographerTemplate(photographer).getUserCardDOM();
-            // const photographerModel = photographerTemplate(photographer);
-            // const userCardDOM = photographerModel.getUserCardDOM();
-            photographersSection.appendChild(userCardDOM);
+             photographersSection.innerHTML += userCardDOM;
+            
         });
          document.getElementById("profil-link",()=>{
                             console.log("eeeeeeeeee")
