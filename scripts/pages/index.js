@@ -6,22 +6,16 @@
         return data
     }
     getPhotographers()
-
-//zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-// for(i=0; i<photographers.length)
-// let elementClicked=document.getElementById("profil-link")
-// console.log(elementClicked)
-//zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
-
-
+//  console.log(photographers)
 
     async function displayData(photographers) {
         const photographersSection = document.querySelector(".photographer_section");
 
         photographers.forEach((photographer) => {
             const userCardDOM = photographerTemplate(photographer).getUserCardDOM();
-             photographersSection.innerHTML += userCardDOM;
-            
+            // const photographerModel = photographerTemplate(photographer);
+            // const userCardDOM = photographerModel.getUserCardDOM();
+            photographersSection.appendChild(userCardDOM);
         });
          document.getElementById("profil-link",()=>{
                             console.log("eeeeeeeeee")
