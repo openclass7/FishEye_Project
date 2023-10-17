@@ -1,18 +1,3 @@
-// function displayModal() {
-//     const modal = document.getElementById("contact_modal");
-// 	modal.style.display = "block";
-// }
-
-// function closeModal() {
-//     const modal = document.getElementById("contact_modal");
-//     modal.style.display = "none";
-// }
-//---------------------------
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
-
-
-
 
 function displayModal () {
   const modal = document.getElementById("contact_modal");
@@ -36,4 +21,6 @@ form.addEventListener('submit', e => {
 	console.log({ firstnameValue, lastnameValue, emailValue, messageValue });
 	e.preventDefault();
 });
+
+
 
