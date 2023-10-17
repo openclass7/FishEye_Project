@@ -12,7 +12,7 @@ async function displayPhotographers() {
     
         const photographers = !id ? photographersData : photographersData.filter(photographer => photographer.id == id);
        
-        const sectionPhotographerProfil = document.querySelector('#photograph-header');
+        const sectionPhotographerProfil = document.getElementById('photograph-header');
         const templatePhotographerProfil = `
             <article  class="profil_photograph">
                 <div class=' infos_photograph'>
