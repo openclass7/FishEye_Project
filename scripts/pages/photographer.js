@@ -29,72 +29,27 @@ async function getPhotographers()
        });
 
    }
-   
-//    async function displayData_2(mediaData) {
-//     
-
-//        mediaData.forEach((Media) => {
-         
-           
-       
-//        });
-       
-   //}
-
-//    async function init_2() {
-//     const  photographers_data  = await getPhotographers();
-//     const  mediaData=photographers_data.media  
-//     console.log(mediaData);
-//     const id = window.location.search.split('id=')[1];
-//     console.log(id);
-//     const Media = !id ? mediaData : mediaData.filter(media => media.photographerId==id);
-//      console.log(Media)
-//    console.log(Media.name)
 
 
-//     displayData_2(Media)
-//    }
-//    init_2()
-
-//-------------------------------------------
 
    async function init() {
        const  photographers_data  = await getPhotographers();
        const  photographers=photographers_data.photographers  
       
        console.log(photographers)
-       console.log(photographers[0].name)
-       console.log(photographers[1].name)
-        
+   
+       const id = window.location.search.split('id=')[1];
+       console.log(id);
+       const photographer = !id ? photographers : photographers.filter(photographer => photographer.id == id);
 
-    // let photographersData = data.photographers;
-//   console.log(photographersData);
-     console.log(photographers);
-        const id = window.location.search.split('id=')[1];
-    console.log(id);
-     const photographer = !id ? photographers : photographers.filter(photographer => photographer.id == id);
-       console.log(photographer)
-       console.log(photographer[0].name)
 
 
        const  mediaData=photographers_data.media  
        console.log(mediaData);
-    //    const id = window.location.search.split('id=')[1];
-    //    console.log(id);
        const Media = !id ? mediaData : mediaData.filter(media => media.photographerId==id);
-        console.log(Media)
-      console.log(Media.name)
-   
-   
-    //    displayData_2(Media)
+       console.log(Media)
 
-
-
-
-//         console.log(photographers[0].city)
-//         // console.log(photographers[0].alt)
-//         console.log(photographers[0].portrait)
-    let nameForm=document.getElementById("name_form")
+      let nameForm=document.getElementById("name_form")
        nameForm.innerHTML=photographer[0].name
        console.log(nameForm);
       

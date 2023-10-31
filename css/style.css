@@ -75,3 +75,27 @@ h1 {
    
    
 }
+
+
+@media screen and (max-width: 1040px) {
+    header{
+        flex-direction: column;
+        margin-top: 20px;
+    }
+   .logo{
+        margin-left: 0px;
+    }
+    .photographer_section    {
+        /* width: 45%; */
+        display: grid;
+        grid-template-columns: 1fr  1fr;
+    }
+    h1 {
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 700px ) {
+   
+
+}

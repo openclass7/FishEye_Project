@@ -1,12 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.logo-ph {
+    height: 50px;
+    margin-left: 60px;
+
+}
 #contact_modal {
     display: none;
 }
 
 .photograph-header {
     background-color: #FAFAFA;
-    /* background-color: #FAFAFA; */
+    /* background-color: #7bca3f; */
     height: 300px;
-    margin: 0 100px;
+    margin: 0 55px;
 }
 
 .contact_button {
@@ -98,19 +107,19 @@ form input,form textarea {
 
   /* css pour select */
    .filter {
-    margin-top: 20px;
+    margin: 20px 15px;
     display: flex;
     align-items: center;
   }
   .tri {
-    margin: 30px 100px 30px 100px;
+    margin: 30px 30px 30px 40px;
     position: relative;
     font-size: 27px;
     font-weight: 600;
   }
 
  
- .filter #select{
+ div.filter #select{
   max-height: 64px;
   cursor: pointer;
   border-radius: 5px;
@@ -120,16 +129,12 @@ form input,form textarea {
   font-size: 27px;
   width:200px;
   height: 64px;
-  cursor: pointer;
-  background-color: #911C1C;
-  border-radius: 5px;
-
   }
 /* css pour photographers header */
 
-/* .infos_photograph  {
-  display: block; 
-} */
+.infos_photograph  {
+  margin: 20px 20px;
+}
 .infos_photograph h2 {
     color: #D3573C;
     font-size: 50px;
@@ -153,10 +158,11 @@ form input,form textarea {
     justify-content: space-between;
     align-items: center;
     margin: 20px 20px;
+    margin: 20px 15px;
 }
 .profil_photograph a {
 text-decoration: none;
-margin-top: 20px;
+margin : 20px 20px;
 }
 .profil_photograph img {
 height: 200px;
@@ -173,19 +179,41 @@ object-fit: cover;
 #main{
     display: flex;
     flex-direction: column;
-    padding: 5px 20px 0;
+    padding:0;
+    margin: 0;
 }
 
 .photograph-content{
     display: grid;
-    gap: 2rem; 
+    gap: 0px; 
     grid-template-columns: repeat(3, 1fr);
-    margin-top: 2rem;
+    margin: 20px;
 }
-.photographers_media figure{
-   width:100%;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 40px;
-    margin-inline-end: 40px;
+
+.image_video img,.image_video video{
+    display: flex;
+    flex-direction: column;
+    /* padding: 5px 20px 0; */
+    cursor: pointer;
+     border-radius: 5px;
+     height: 370px;
+     object-fit: cover;
+     width: 100%;
+}
+figcaption h2{
+    color: #901c1c;
+    font-size: 20px;
+ margin-bottom: 10px;
+}
+figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.like{
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #901C1C;
+    font-size: 16px;
 }

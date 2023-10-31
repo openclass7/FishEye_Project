@@ -89,7 +89,7 @@ function sentPermitted(elt){
           sentDenied(firstName, 'Veuillez saisir un prénom');
           return false;
      }else if(nameRegex.test(firstName.value )===false) {
-          sentDenied(firstName, 'Veuillee saisir un prénom valid');
+          sentDenied(firstName, 'Veuillez saisir un prénom valid');
           return false; 
         }
       else if(firstName.value.length<2) {

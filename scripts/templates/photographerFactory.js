@@ -3,34 +3,33 @@
  function photographerTemplate_2(mediaData) {
     const { photographerId, title,image,video,likes } = mediaData;
 
-console.log(mediaData)
+    console.log(mediaData)
 
 
 function templatePhotographerMedia(){
-    return article = `
-    
+    if(image != undefined){
+      html_injected= `<img   class="media_photos" 
+       src="./assets/photographersGallery/${photographerId}/${image}" />`
+    }else if( video != undefined){
+       html_injected=
+          `<video   class="media_videos"  >
+               <source src="./assets/photographersGallery/${photographerId}/${ video}" 
+                 type="video/mp4">
+           </video>`
+    }
+    return  `<figure class="image_video">
+                    ${html_injected}
+                    <figcaption>
+                        <h2>${  title}</h2>
+                        <div >
+                            <span class="like">${ likes}</span> 
+                            <button class="like" type="button"  >
+                                <i class="fa-regular fa-heart"></i>
+                            </button> 
+                        </div>
+                    </figcaption>
 
-   <article class="photographers_media">                           
-        <a href="#"  >
-        <figure>
-            <img  width="100%"  class="media_photos" src="./assets/photographersGallery/${photographerId}/${image}" />
-            <video width="100%"  class="media_videos"  >
-                <source src="./assets/photographersGallery/${photographerId}/${ video}" type="video/mp4">
-            </video>
-        </figure>     
-        </a>
-
-        <figcaption>
-            <h2>${  title}</h2>
-                <div >
-                    <span class="like">${ likes}</span> 
-                    <button class="like" type="button"  >
-                         
-                         <i style="font-size:24px" class="fa">&#xf08a;</i>
-                    </button> 
-                </div>
-        </figcaption>
-    </article> `
+                </figure>`
      
     }
 return { photographerId, title,image,video,likes, templatePhotographerMedia  };
@@ -41,23 +40,23 @@ return { photographerId, title,image,video,likes, templatePhotographerMedia  };
  //-------------------------------------------------------
  function photographerTemplate(data) {
     const { name, portrait,city,country,tagline,price,id } = data;
-    
     console.log(data)
     
     const picture = `assets/photographersGallery/portrait/${portrait}`;
 
- function getUserCardDOM() {
-        return article = ` 	<article  aria-label="profil de ${name}">
-								<a href="photographer.html?id=${id}"   id="profil-link-${id}" class="profil-link">
-									<div class="reflect">
-										<img src="${picture}" alt="Photo de ${name}" aria-label="Photo de ${name}"/>
-									</div>
-									<h2>${name}</h2>
-								</a>
-								<p class="location">${city}, ${country}</p>
-								<p class="tagline">${tagline}</p>
-								<p class="price">${price}€/jour</p>
-							</article> `;
+    function getUserCardDOM() {
+        return article = `
+        <article  aria-label="profil de ${name}">
+			<a href="photographer.html?id=${id}"   id="profil- link-${id}" class="profil-link">
+			<div class="reflect">
+			<img src="${picture}" alt="Photo de ${name}" aria-label="Photo de ${name}"/>
+			</div>
+			<h2>${name}</h2>
+            </a>
+            <p class="location">${city}, ${country}</p>
+            <p class="tagline">${tagline}</p>
+            <p class="price">${price}€/jour</p>
+		</article> `;
           }
 
 
@@ -77,12 +76,6 @@ return { photographerId, title,image,video,likes, templatePhotographerMedia  };
                 `
       }
         
-//afficher les médias de chaque photographe
-
-
-
-   
-    // return { city, country, name, portrait, price, tagline, picture, getUserCardDOM };
     return {  city, country, name, portrait, price, tagline, picture, getUserCardDOM, getPhotographerInfos  };
   
 }
